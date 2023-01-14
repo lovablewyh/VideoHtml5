@@ -1,0 +1,146 @@
+body,html{
+    margin:0;
+    width: 100%;
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}  
+a:active{
+    text-decoration:none;
+}    
+
+.player {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: #000 url(https://lovablewyh.yaqian.hk/xwindex/images/loading.gif) center/300px no-repeat;
+    position: relative;
+}
+  
+video {
+	display: none;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.controls {
+    opacity: 0;
+    display:flex;
+	width: 100%;
+	height: 50px;
+    background-color: rgba(102,204,255,0.3);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+
+}
+
+
+.player:hover .controls {
+	opacity: 1;
+    -webkit-animation: ad .4s;
+	animation: agreement .4s;
+}
+
+/*播放/暂停*/
+    .controls .switch{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        text-align: center;
+        line-height: 20px;
+    }
+
+/*全屏按钮*/
+.controls .expand {
+	display: block;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	color: #FFF;
+	position: absolute;
+	right: 11px;
+	top: 20px;
+}
+.controls .expandfull {
+	display: block;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	color: #FFF;
+	position: absolute;
+	right: 11px;
+	top: 11px;
+}
+
+.progress {
+	width: 100%;
+	height: 6px;
+	border-radius: 3px;
+	overflow: hidden;
+	background-color: #555;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/*下载进度*/
+.progress .loaded {
+	width: 0;
+	height: 100%;
+	background-color: blue;
+}
+
+/*播放进度*/
+.progress .line {
+	width: 0;
+	height: 100%;
+	background-color: #FFF;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/**/
+.progress .bar {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+
+/*时间*/
+.timer {
+	height: 20px;
+	line-height: 20px;
+	position: absolute;
+	left: 45px;
+	top: 20px;
+	color: #FFF;
+	font-size: 14px;
+}
+
+.xwxunhuan{
+    height: 20px;
+	line-height: 20px;
+	position: absolute;
+	right: 50px;
+	top: 20px;
+	color: #FFF;
+	font-size: 14px;
+}
