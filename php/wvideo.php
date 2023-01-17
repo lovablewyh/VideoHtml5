@@ -13,13 +13,13 @@ exit;
 if(!empty($_GET["photo"])){
 $photo = $_GET["photo"];
 }else{
-$photo = "https://lovablewyh.yaqian.hk/xwindex/images/picture.jpg";
+$photo = "./bj.jpg";
 }
 ?>
 <!DOCTYPE HTML>
 <head>
 <meta charset="utf-8">
-<title>小惟h5播放器</title>
+<title>H5播放器 - 雨晨风蓝</title>
 <meta name="Robots" contect="all">
 <meta name="Author" contect="徐惟康">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,6 +53,9 @@ $photo = "https://lovablewyh.yaqian.hk/xwindex/images/picture.jpg";
     </div>
     
     <script type="text/javascript">
+    var url = '<?=$url ?>';
+    ####以下可丢到加密平台加密####
+    var nowurl = window.location.host;#获取host
     var player = document.querySelector(".player");
     var video = document.querySelector("video");
     var isPlay = document.querySelector(".switch");
@@ -64,13 +67,12 @@ $photo = "https://lovablewyh.yaqian.hk/xwindex/images/picture.jpg";
     var loaded = document.querySelector(".progress > .loaded");
     var currPlayTime = document.querySelector(".timer > .current");
     var totalTime = document.querySelector(".timer > .total");
-    var xwrequest = xwvideoCORS('get', '<?=$url ?>');
-    
-    //if(hh!="webapi.fcyle.com"){
-    //alert("你的行为很危险，请到https://webapi.fcyle.com/xwindex/videoplayer/xwplayer.php访问本页");
-    //player.style.display = 'none';
-    //}else{
-
+    #控制域名
+    #if(nowurl!="api.xuvce.com" && nowurl!="api.yuwind.com" && nowurl!="api.nuoyis.com"){
+    #alert("你的行为很危险，请到https://api.xuvce.com/xwapi/videoplayer/?url="+url+"访问本页");
+    #player.style.display = 'none';
+    #}else{
+    var xwrequest = xwvideoCORS('get', url);
     function xwvideoCORS(method, url){
      var xwvideoapi = new XMLHttpRequest();
      if('withCredentials' in xwvideoapi){
@@ -202,7 +204,7 @@ $photo = "https://lovablewyh.yaqian.hk/xwindex/images/picture.jpg";
 
         return h+":"+m+":"+s;
     };
-//}
+#}
 </script>
 </body>
 </html>
